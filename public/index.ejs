@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Twitter Sentiment on Kabanero</title>
+	<meta name="author" content="Andrew Lohr">
+	<meta name="description" content="Get and sort sentiment from tweets. Buit on top of Kabanero">
+	<meta name="keywords" content="kabanero,twitter,nlu,watson">
+	<link rel="stylesheet" href="css/home.css" type="text/css">
+	<link rel="shortcut icon" href="https://kabanero.io/img/favicon/favicon.ico">
+</head>
+
+<body>
+	<div class="centerText">
+		<img id="logo" src="https://kabanero.io/img/kabanero-final.svg"/>
+		<span id="blurb">Example Application</span>
+	</div>
+
+	<div id="intro">
+		<p class="center"> 
+			See Kabanero in action! This application will get tweets from any search and then pull the text from each tweet
+			and send it to Watson NLU (Natural Language Understanding) to get a sentiment score from the tweet. The results
+			are then displayed along with the most negative tweet highlighted at the top in red.
+		</p>
+	</div>
+
+	<hr/>
+
+	<h2>Worst Sentiment Score</h2>
+	<div id="worstSentiment">
+		<%- include('includes/sentimentResult', {result: worst}); %>
+	</div>
+
+	<hr/>
+
+	<h2>Other Sentiment Results</h2>
+	<div class="otherSentiments">
+		<% results.sort((a, b) => parseFloat(a.sentiment.document.score) - parseFloat(b.sentiment.document.score)); %>
+		
+		<% results.forEach(result => { %>
+			<%- include('includes/sentimentResult', {result}); %>
+		<% }); %>
+	</div>
+</body>
+
+</html>

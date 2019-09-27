@@ -1,0 +1,35 @@
+body {
+    font-size: 1.1rem;
+}
+
+.centerText {
+    text-align: center;
+}
+
+#logo {
+    height: 50px;
+}
+
+#blurb {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+#intro {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#worstSentiment > .result {
+    background-color: rgb(255,65,54, .5);
+}
+
+.otherSentiments > .result {
+    background-color:rgba(127, 219, 255, .5);
+}
+
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid;
+}
