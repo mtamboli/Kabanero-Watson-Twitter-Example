@@ -1,6 +1,6 @@
 const Twitter = require('twitter');
 
-// Setup the Twitter Client. This requires twitter credentials from your Twitter developer account
+// Setup the Twitter Client. This requires twitter credentials from your Twitter developer account - update
 const TWITTER_CLIENT = new Twitter({
 	consumer_key: process.env.TWITTER_CONSUMER_KEY,
 	consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
